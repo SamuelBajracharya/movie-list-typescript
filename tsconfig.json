@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "react-jsx", // For React 17+ and JSX transform
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true, // Avoids issues with third-party types
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"], // Ensures TypeScript checks only inside 'src'
+  "exclude": ["node_modules"] // Excludes 'node_modules' to avoid conflicts
+}
