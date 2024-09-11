@@ -13,7 +13,7 @@ export interface PageType {
 
 function Movies() {
   const [filter, setFilter] = useState(category[0].name);
-  const [pages, setPages] = useState<PageType[]>({
+  const [pages, setPages] = useState<PageType>({
     now_playing: 1,
     popular: 1,
     top_rated: 1,
@@ -34,7 +34,7 @@ function Movies() {
       (category: CategoryType) => category.name == filter
     );
     if (currentCategory) {
-      const nextPage = pages[currentCategory.url] + 1;
+      const nextPage = (pages[(currentCategory.url)  as keyof PageType]) + 1;
       setPages((prev) => ({
         ...prev,
         [currentCategory.url]: nextPage,
