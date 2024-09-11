@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { baseApi } from "../../api/axiosInstance";
 import Youtube from "react-youtube";
-import YouTube from "react-youtube";
+import YouTube, { YouTubeProps } from 'react-youtube';
 import { TrailerProps } from "../../utils/constant";
 
 function Trailers({ movieId }: TrailerProps) {
@@ -25,7 +25,7 @@ function Trailers({ movieId }: TrailerProps) {
     FetchTrailers();
   }, [movieId]);
 
-  const opts = {
+  const opts: YouTubeProps['opts'] = {
     height: "230",
     width: "350",
   };
